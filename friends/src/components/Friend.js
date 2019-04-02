@@ -1,11 +1,14 @@
 import React from 'react';
+import {Card, CardBody, CardTitle, CardText} from '../StyledComponents';
 
 export default function Friend(props) {
     return (
-        <div>
-            <h4>Name: {props.friend.name}</h4>
-            <p>Age: {props.friend.age}</p>
-            <p>Email: {props.friend.email}</p>
-        </div>
+        <Card color="dodgerblue">
+            <CardBody>
+                <CardTitle><strong>Name:</strong> {props.friend.name}</CardTitle>
+                <CardText><strong>Age:</strong> {props.friend.age}</CardText>
+                <CardText><strong>Email:</strong> {props.friend.email}</CardText>
+            </CardBody>
+        </Card>
     )
 }
