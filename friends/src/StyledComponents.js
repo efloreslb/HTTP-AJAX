@@ -1,14 +1,15 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 const Container = styled.div`
     width: 870px;
     margin: 0 auto;
     border: 1px solid black;
     text-align: center;
+    padding-bottom: 10px;
 `;
 
 const Card = styled.div`
-    max-width: 280px;
+    max-width: 250px;
     width: 100%;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -19,7 +20,7 @@ const Card = styled.div`
 
 const CardBody = styled.div`
     width: 100%;
-    padding: 15px;
+    padding: 10px;
 `;
 
 const CardTitle = styled.div`
@@ -33,4 +34,24 @@ const CardText = styled.text`
     margin: .15em 0;
 `;
 
-export {Container, Card, CardTitle, CardBody, CardText}
+const Form = styled.form`
+
+`;
+
+const Input = styled.input`
+    padding: 5px;
+    font-size: 14px;
+    margin: 5px;
+`;
+
+const Button = styled.button`
+    background-color: #C33C54;
+    color: #fff;
+    padding: 8px;
+    font-size: 14px;
+    border: 0px solid #C33C54;
+    margin: 5px;
+    cursor: pointer;
+`;
+
+export {Container, Card, CardTitle, CardBody, CardText, Form, Input, Button}
