@@ -4,7 +4,7 @@ import AddFriend from './AddFriend';
 import axios from 'axios';
 
 
-class FriendsList extends Component {
+export default class FriendsList extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,26 +20,13 @@ class FriendsList extends Component {
 
     postFriend = friend => {
 
-        // console.log(friend);
-
         axios.post('http://localhost:5000/friends', friend)
             .then(res => {
-                console.log(res);
+                this.setState(prevState => prevState.friends = res.data)
             })
             .catch(err => {
                 console.log(err);
             });
-
-        this.setState((friend) => {
-            
-            return {
-                friends: [...this.state.friends, {
-                    name: friend.name,
-                    age: friend.age,
-                    email: friend.email
-                }]
-            }
-        })
     }
 
     render() {
@@ -52,5 +39,3 @@ class FriendsList extends Component {
         )
     }
 }
-
-export default FriendsList;
