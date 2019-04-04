@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const Container = styled.div`
     width: 870px;
@@ -44,7 +44,20 @@ const Input = styled.input`
     padding: 5px;
     font-size: 16px;
     margin: 5px;
-    width: 250px;
+
+    &:focus {
+        outline-width: 0;
+    }
+
+    ${props => props.small && css`
+        font-size: 14px;
+        width: 100%;
+        background-color: #254E70;
+        color: #fff;
+        border: 0px;
+        border-bottom: 1px solid #fff;
+
+    `}
 `;
 
 const Button = styled.button`

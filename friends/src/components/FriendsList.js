@@ -25,8 +25,9 @@ export default class FriendsList extends Component {
     }
 
     updateFriend = friend => {
-        axios.put('http://localhost:5000/friends', friend)
-            .then(res => console.log(res))
+        console.log("Update", friend.id);
+        axios.put(`http://localhost:5000/friends/${friend.id}`, friend)
+            .then(res => this.setState({friends: res.data}))
             .catch(err => console.log(err))
     }
 
