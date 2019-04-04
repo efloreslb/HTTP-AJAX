@@ -5,7 +5,7 @@ export default class AddFriend extends Component {
     constructor(props){
         super(props);
         this.state = {
-            newFriend: {
+            friend: {
                 name: '',
                 age: '',
                 email: ''
@@ -15,22 +15,22 @@ export default class AddFriend extends Component {
 
     handleChange = event => {
         this.setState({
-            newFriend: {
-                ...this.state.newFriend,
+            friend: {
+                ...this.state.friend,
                 [event.target.name]: event.target.value
             }
         })
     }
 
-    addNewFriend = event => {
+    handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state.newFriend);
-        this.props.addFriend(this.state.newFriend)
+        console.log(this.state.friend);
+        this.props.addFriend(this.state.friend)
     }
 
     render() {
         return(
-            <Form onSubmit={this.addNewFriend}>
+            <Form onSubmit={this.handleSubmit}>
                 <Input name="name" placeholder="Enter Name" onChange={this.handleChange}/>
                 <Input name="age" placeholder="Enter Age" onChange={this.handleChange}/>
                 <Input name="email" placeholder="Enter Email" onChange={this.handleChange}/>
