@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Friend from './Friend';
 import AddFriend from './AddFriend';
 import axios from 'axios';
+import {Route} from 'react-router-dom';
 
 
 export default class FriendsList extends Component {
