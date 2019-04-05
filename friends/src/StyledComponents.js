@@ -29,7 +29,7 @@ const CardTitle = styled.div`
     background-color: #37718E;
 `;
 
-const CardText = styled.text`
+const CardText = styled.div`
     display: block;
     text-align: left;
     margin: .15em 0;

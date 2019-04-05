@@ -6,6 +6,7 @@ export default class Friend extends React.Component {
         super(props);
         this.state = {
             friend: {
+                id: props.friend.id,
                 name: props.friend.name,
                 age: props.friend.age,
                 email: props.friend.email
@@ -14,11 +15,13 @@ export default class Friend extends React.Component {
     }
 
     handleDelete = e => {
-        this.props.deleteFriend(this.props.friend)
+        e.preventDefault();
+        this.props.deleteFriend(this.props.friend) //pass in the current friend, from Props
     }
 
     handleUpdate = e => {
-        this.props.updateFriend(this.props.friend)
+        e.preventDefault();
+        this.props.updateFriend(this.state.friend) //pass in updated friend, from State
     }
 
     handleChange = e => {
@@ -28,7 +31,6 @@ export default class Friend extends React.Component {
                 [e.target.name]: e.target.value
             }
         })
-        
     }
 
     render() {

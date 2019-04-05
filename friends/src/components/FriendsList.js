@@ -25,21 +25,20 @@ export default class FriendsList extends Component {
     }
 
     updateFriend = friend => {
-        console.log("Update", friend.id);
+        console.log("inside update", friend);
         axios.put(`http://localhost:5000/friends/${friend.id}`, friend)
             .then(res => this.setState({friends: res.data}))
             .catch(err => console.log(err))
     }
 
     deleteFriend = friend => {
-        console.log("FriendList", friend);
         axios.delete(`http://localhost:5000/friends/${friend.id}`, friend)
             .then(res => this.setState({friends: res.data}))
             .catch(err => console.log(err))
     }
 
     render() {
-        console.log(this.state)
+        console.log("State", this.state)
         return (
             <>
                 <AddFriend addFriend={this.postFriend}/>
